@@ -5,7 +5,7 @@ const renderTooltipFields = (data: Record<string, string>) => {
   return Object.entries(data).map(([key, value]) => {
     return (
       <div key={key}>
-        <strong>{key.replace(/_/g, ' ').toUpperCase()}:</strong> {value as React.ReactNode}
+        <strong>{key.replace(/_/g, ' ')}:</strong> {value as React.ReactNode}
       </div>
     )
   })

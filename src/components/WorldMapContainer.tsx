@@ -36,8 +36,16 @@ const WorldMapContainer: React.FC = () => {
   }
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ComposableMap projection="geoMercator">
+    <div style={{ position: 'relative', width: '100%', height: '90vh' }}>
+      <ComposableMap
+        projection="geoMercator"
+        style={{
+          width: '100%',
+          height: '100%',
+          maxWidth: '100%',
+          maxHeight: '100%'
+        }}
+      >
         <Geographies geography={worldMap}>
           {({ geographies }) =>
             geographies.map((geo) => (
@@ -45,9 +53,9 @@ const WorldMapContainer: React.FC = () => {
                 key={geo.rsmKey}
                 geography={geo}
                 style={{
-                  default: { fill: '#DDD' },
-                  hover: { fill: '#BBB' },
-                  pressed: { fill: '#999' }
+                  default: { fill: '#DDD', stroke: '#A9A9A9', strokeWidth: 0.3 },
+                  hover: { fill: '#b5b3b3', stroke: '#A9A9A9', strokeWidth: 0.5 },
+                  pressed: { fill: '#B0B0B0', stroke: '#A9A9A9', strokeWidth: 0.5 }
                 }}
               />
             ))

@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="map-container" style={{ textAlign: 'center' }}>
       <h1>City Client</h1>
       <WorldMapContainer />
     </div>
