@@ -36,8 +36,16 @@ const WorldMapContainer: React.FC = () => {
   }
 
   return (
-    <div style={{ position: 'relative' }}>
-      <ComposableMap projection="geoMercator">
+    <div style={{ position: 'relative', width: '100%', height: '90vh' }}>
+      <ComposableMap
+        projection="geoMercator"
+        style={{
+          width: '100%',
+          height: '100%',
+          maxWidth: '100%',
+          maxHeight: '100%'
+        }}
+      >
         <Geographies geography={worldMap}>
           {({ geographies }) =>
             geographies.map((geo) => (
