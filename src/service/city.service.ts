@@ -3,6 +3,11 @@ import { CityData } from 'src/types'
 
 // Get All City data
 export const getCityData = async (): Promise<CityData[]> => {
-  const response = await apiClient().get('/city')
-  return response.data
+  try {
+    const response = await apiClient().get('/city')
+    return response.data
+  } catch (error: unknown) {
+    console.error(`CityService: getCityData: ${error}`)
+    return []
+  }
 }
